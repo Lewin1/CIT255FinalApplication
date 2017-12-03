@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Movies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Movie>
+    <ID>1</ID>
+    <Genre>Fantasy</Genre>
+    <Name>Coco</Name>
+    <Year>2017</Year>
+    <UserRating>0</UserRating>
+  </Movie>
+  <Movie>
+    <ID>2</ID>
+    <Genre>Comedy</Genre>
+    <Name>Daddy's Home 2</Name>
+    <Year>2017</Year>
+    <UserRating>0</UserRating>
+  </Movie>
+  <Movie>
+    <ID>3</ID>
+    <Genre>Adventure</Genre>
+    <Name>The Star</Name>
+    <Year>2017</Year>
+    <UserRating>0</UserRating>
+  </Movie>
+  <Movie>
+    <ID>5</ID>
+    <Genre>Romance</Genre>
+    <Name>Titanic</Name>
+    <Year>1997</Year>
+    <UserRating>0</UserRating>
+  </Movie>
+  <Movie>
+    <ID>4</ID>
+    <Genre>Si-Fi</Genre>
+    <Name>Alien</Name>
+    <Year>1979</Year>
+    <UserRating>2</UserRating>
+  </Movie>
+</Movies>

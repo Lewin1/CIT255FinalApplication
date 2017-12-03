@@ -1,0 +1,117 @@
+﻿using CIT255FinalApplication.Model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CIT255FinalApplication
+{
+    class BusinessLayer
+    {
+        Data.RepositoryXML Repository = new Data.RepositoryXML();
+
+        public List<Movie> DisplayAllMovies()
+        {
+            List<Movie> movies = new List<Movie>();
+
+            movies = Repository.ReadAllMovies();
+
+            return movies;
+        }
+
+        public void addMovie(Movie movie)
+        {
+            Repository.Add(movie);
+        }
+
+        public void deleteMovie(int ID)
+        {
+            Repository.Delete(ID);
+        }
+
+        public void updateMovie(Movie movie)
+        {
+            deleteMovie(movie.ID);
+            addMovie(movie);
+        }
+
+        public void VoteUp(Movie movie)
+        {
+            movie.UpdateRating(true);
+            updateMovie(movie);
+        }
+
+        public void VoteDown(Movie movie)
+        {
+            movie.UpdateRating(false);
+            updateMovie(movie);
+        }
+
+        public List<Movie> QueryMoviesByName (string name)
+        {
+            List<Movie> movies = DisplayAllMovies();
+            List<Movie> matchingMovies = new List<Movie>();
+            
+            foreach (Movie movie in movies)
+            {
+                if (movie.Name == name)
+                {
+                    matchingMovies.Add(movie);
+                }
+            }
+
+            return matchingMovies;
+        }
+
+        public List<Movie> QueryMoviesByGenre(string genre)
+        {
+            List<Movie> movies = DisplayAllMovies();
+            List<Movie> matchingMovies = new List<Movie>();
+
+            foreach (Movie movie in movies)
+            {
+                if (movie.Genre == genre)
+                {
+                    matchingMovies.Add(movie);
+                }
+            }
+
+            return matchingMovies;
+        }
+
+        public List<Movie> QueryMoviesByRating(int rating)
+        {
+            List<Movie> movies = DisplayAllMovies();
+            List<Movie> matchingMovies = new List<Movie>();
+
+            foreach (Movie movie in movies)
+            {
+                if (movie.UserRating == rating)
+                {
+                    matchingMovies.Add(movie);
+                }
+            }
+
+            return matchingMovies;
+        }
+
+        public List<Movie> QueryMoviesByID(int ID)
+        {
+            List<Movie> movies = DisplayAllMovies();
+            List<Movie> matchingMovies = new List<Movie>();
+
+            foreach (Movie movie in movies)
+            {
+                if (movie.UserRating == ID)
+                {
+                    matchingMovies.Add(movie);
+                }
+            }
+
+            return matchingMovies;
+        }
+
+    }
+}

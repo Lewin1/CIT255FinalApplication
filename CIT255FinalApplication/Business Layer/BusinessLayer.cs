@@ -39,14 +39,26 @@ namespace CIT255FinalApplication
 
         public void VoteUp(Movie movie)
         {
-            movie.UpdateRating(true);
-            updateMovie(movie);
+            if (movie == null)
+            {
+                MessageBox.Show("Please select a movies from the list above.");
+            } else
+            {
+                movie.UpdateRating(true);
+                updateMovie(movie);
+            }
         }
 
         public void VoteDown(Movie movie)
         {
-            movie.UpdateRating(false);
-            updateMovie(movie);
+            if (movie == null)
+            {
+                MessageBox.Show("Please select a movies from the list above.");
+            } else
+            {
+                movie.UpdateRating(false);
+                updateMovie(movie);
+            }
         }
 
         public List<Movie> QueryMoviesByName (string name)

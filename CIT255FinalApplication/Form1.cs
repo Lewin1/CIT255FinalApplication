@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using CIT255FinalApplication;
 using static CIT255FinalApplication.Model.Enum;
 using CIT255FinalApplication.Model;
-using CIT255FinalApplication.Data;
 
 namespace CIT255FinalApplication
 {
@@ -131,6 +130,7 @@ namespace CIT255FinalApplication
             HideAllButtons();
             ShowAddForm();
             DisplayAllMovies();
+            this.ActiveControl = txtID;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -139,6 +139,9 @@ namespace CIT255FinalApplication
             HideAllButtons();
             ShowDeleteForm();
             DisplayAllMovies();
+            lbID.Visible = false;
+            txtID.Text = "Please select an item from the list above";
+            txtID.ReadOnly = true;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -146,6 +149,7 @@ namespace CIT255FinalApplication
             if (lstDisplayList.SelectedItem != null) {
                 appState = AppState.Update;
                 SetUpdateValues(GetMovieFromListBox());
+                this.ActiveControl = txtName;
             }
             else
             {
@@ -198,14 +202,14 @@ namespace CIT255FinalApplication
 
         private void btnVoteUp_Click(object sender, EventArgs e)
         {
-            businessLayer.VoteUp(lstDisplayList.SelectedItem as Movie);
+            businessLayer.VoteUp(lstDisplayList.SelectedItem as Model.Movie);
             lstDisplayList.Items.Clear();
             DisplayAllMovies();
         }
 
         private void btnVoteDown_Click(object sender, EventArgs e)
         {
-            businessLayer.VoteDown(lstDisplayList.SelectedItem as Movie);
+            businessLayer.VoteDown(lstDisplayList.SelectedItem as Model.Movie);
             lstDisplayList.Items.Clear();
             DisplayAllMovies();
         }
@@ -222,23 +226,35 @@ namespace CIT255FinalApplication
         private void btnQueryByName_Click(object sender, EventArgs e)
         {
 
+
             lbName.Visible = true;
             txtName.Visible = true;
+            this.ActiveControl = txtName;
 
             if (txtName.Text != "")
             {
                 DisplayQueriedMovies(businessLayer.QueryMoviesByName(txtName.Text));
                 lbName.Visible = false;
                 txtName.Visible = false;
-                txtGenre.Text = "";
+                txtName.Text = "";
+                HideAllButtons();
+                ShowQueryButtons();
+                //DisplayAllMovies();
+
             }
 
         }
 
         private void btnQueryByType_Click(object sender, EventArgs e)
         {
+
+            HideAllButtons();
+            ShowQueryButtons();
+            DisplayAllMovies();
+
             lbGenre.Visible = true;
             txtGenre.Visible = true;
+            this.ActiveControl = txtGenre;
 
             if (txtGenre.Text != "")
             {
@@ -252,8 +268,13 @@ namespace CIT255FinalApplication
         private void btnQueryByRating_Click(object sender, EventArgs e)
         {
 
+            HideAllButtons();
+            ShowQueryButtons();
+            DisplayAllMovies();
+
             lbRating.Visible = true;
             txtRating.Visible = true;
+            this.ActiveControl = txtRating;
 
             if (txtRating.Text != "")
             {
@@ -271,8 +292,8 @@ namespace CIT255FinalApplication
         public void DisplayAllMovies()
         {
             List<Movie> movies = businessLayer.DisplayAllMovies();
-
-            foreach (Movie movie in movies)
+            List<Movie> sortedMovies = movies.OrderBy(m => m.ID).ToList();
+            foreach (Movie movie in sortedMovies)
             {
                 lstDisplayList.Items.Add(movie);
             }
@@ -362,18 +383,14 @@ namespace CIT255FinalApplication
 
         public void AppStateDelete()
         {
-            int ID;
-            int.TryParse(txtID.Text, out ID);
-            List<Movie> movies = businessLayer.QueryMoviesByID(ID);
-
-            if (ID != 0)
-            {
-                businessLayer.deleteMovie(ID);
+            ShowDeleteForm();
+            int x;
+            if (Int32.TryParse(txtID.Text, out x)) { 
+                businessLayer.deleteMovie(x);
                 HideAllButtons();
                 ShowMainButtons();
                 DisplayAllMovies();
-            }
-
+            };
         }
 
         public void AppStateUpdate()

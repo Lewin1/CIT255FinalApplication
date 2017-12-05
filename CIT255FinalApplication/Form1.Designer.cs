@@ -109,7 +109,7 @@
             this.btnExit.Location = new System.Drawing.Point(506, 416);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(92, 37);
-            this.btnExit.TabIndex = 6;
+            this.btnExit.TabIndex = 99;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -120,14 +120,14 @@
             this.lstDisplayList.Location = new System.Drawing.Point(26, 12);
             this.lstDisplayList.Name = "lstDisplayList";
             this.lstDisplayList.Size = new System.Drawing.Size(561, 264);
-            this.lstDisplayList.TabIndex = 7;
+            this.lstDisplayList.TabIndex = 100;
             // 
             // btnQueryByName
             // 
             this.btnQueryByName.Location = new System.Drawing.Point(212, 415);
             this.btnQueryByName.Name = "btnQueryByName";
             this.btnQueryByName.Size = new System.Drawing.Size(92, 37);
-            this.btnQueryByName.TabIndex = 10;
+            this.btnQueryByName.TabIndex = 20;
             this.btnQueryByName.Text = "Query By Name";
             this.btnQueryByName.UseVisualStyleBackColor = true;
             this.btnQueryByName.Click += new System.EventHandler(this.btnQueryByName_Click);
@@ -137,7 +137,7 @@
             this.btnQueryByGenre.Location = new System.Drawing.Point(310, 415);
             this.btnQueryByGenre.Name = "btnQueryByGenre";
             this.btnQueryByGenre.Size = new System.Drawing.Size(92, 37);
-            this.btnQueryByGenre.TabIndex = 11;
+            this.btnQueryByGenre.TabIndex = 21;
             this.btnQueryByGenre.Text = "Query By Genre";
             this.btnQueryByGenre.UseVisualStyleBackColor = true;
             this.btnQueryByGenre.Click += new System.EventHandler(this.btnQueryByType_Click);
@@ -147,7 +147,7 @@
             this.btnQueryByRating.Location = new System.Drawing.Point(408, 415);
             this.btnQueryByRating.Name = "btnQueryByRating";
             this.btnQueryByRating.Size = new System.Drawing.Size(92, 37);
-            this.btnQueryByRating.TabIndex = 12;
+            this.btnQueryByRating.TabIndex = 23;
             this.btnQueryByRating.Text = "Query By Rating";
             this.btnQueryByRating.UseVisualStyleBackColor = true;
             this.btnQueryByRating.Click += new System.EventHandler(this.btnQueryByRating_Click);
@@ -157,7 +157,7 @@
             this.btnMainMenu.Location = new System.Drawing.Point(114, 415);
             this.btnMainMenu.Name = "btnMainMenu";
             this.btnMainMenu.Size = new System.Drawing.Size(92, 37);
-            this.btnMainMenu.TabIndex = 9;
+            this.btnMainMenu.TabIndex = 2;
             this.btnMainMenu.Text = "Main Menu";
             this.btnMainMenu.UseVisualStyleBackColor = true;
             this.btnMainMenu.Click += new System.EventHandler(this.btnMainMenu_Click);
@@ -167,7 +167,7 @@
             this.btnVote.Location = new System.Drawing.Point(310, 416);
             this.btnVote.Name = "btnVote";
             this.btnVote.Size = new System.Drawing.Size(92, 36);
-            this.btnVote.TabIndex = 13;
+            this.btnVote.TabIndex = 4;
             this.btnVote.Text = "Vote";
             this.btnVote.UseVisualStyleBackColor = true;
             this.btnVote.Click += new System.EventHandler(this.btnVote_Click);
@@ -177,7 +177,7 @@
             this.btnDelete.Location = new System.Drawing.Point(212, 415);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(92, 38);
-            this.btnDelete.TabIndex = 14;
+            this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -254,7 +254,7 @@
             this.txtGenre.Location = new System.Drawing.Point(76, 360);
             this.txtGenre.Name = "txtGenre";
             this.txtGenre.Size = new System.Drawing.Size(522, 20);
-            this.txtGenre.TabIndex = 24;
+            this.txtGenre.TabIndex = 22;
             // 
             // txtRating
             // 
@@ -279,15 +279,7 @@
             this.ClientSize = new System.Drawing.Size(611, 464);
             this.Controls.Add(this.txtRating);
             this.Controls.Add(this.lbRating);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnQueryByRating);
-            this.Controls.Add(this.btnQueryByName);
-            this.Controls.Add(this.btnMainMenu);
-            this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnQuery);
-            this.Controls.Add(this.btnVoteDown);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtGenre);
             this.Controls.Add(this.lbGenre);
             this.Controls.Add(this.txtYear);
@@ -297,10 +289,18 @@
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.lbID);
             this.Controls.Add(this.lstDisplayList);
-            this.Controls.Add(this.btnContinue);
-            this.Controls.Add(this.btnVote);
-            this.Controls.Add(this.btnQueryByGenre);
             this.Controls.Add(this.btnVoteUp);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnMainMenu);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnVote);
+            this.Controls.Add(this.btnQuery);
+            this.Controls.Add(this.btnVoteDown);
+            this.Controls.Add(this.btnQueryByName);
+            this.Controls.Add(this.btnQueryByGenre);
+            this.Controls.Add(this.btnQueryByRating);
+            this.Controls.Add(this.btnContinue);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);

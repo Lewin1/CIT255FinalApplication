@@ -54,8 +54,8 @@ namespace CIT255FinalApplication.Data
         public void Delete(int ID)
         {
             _movies.RemoveAll(m => m.ID == ID);
-
             WriteAllMovies();
+
         }
     }
 }

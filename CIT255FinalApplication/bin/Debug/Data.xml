@@ -2,6 +2,7 @@
 <Movies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Movie>
     <ID>1</ID>
+<<<<<<< HEAD
     <Genre>Fantasy</Genre>
     <Name>Coco</Name>
     <Year>2017</Year>
@@ -34,5 +35,18 @@
     <Name>Titanic</Name>
     <Year>1997</Year>
     <UserRating>1</UserRating>
+=======
+    <Genre>11</Genre>
+    <Name>22</Name>
+    <Year>11</Year>
+    <UserRating>2</UserRating>
+  </Movie>
+  <Movie>
+    <ID>2</ID>
+    <Genre>22</Genre>
+    <Name>22</Name>
+    <Year>22</Year>
+    <UserRating>2</UserRating>
+>>>>>>> 6b04596d4a1ed64444bf47666e4df643f7b7e96f
   </Movie>
 </Movies>

@@ -68,7 +68,7 @@ namespace CIT255FinalApplication
             
             foreach (Movie movie in movies)
             {
-                if (movie.Name == name)
+                if (movie.Name.ToUpper() == name)
                 {
                     matchingMovies.Add(movie);
                 }
@@ -84,7 +84,7 @@ namespace CIT255FinalApplication
 
             foreach (Movie movie in movies)
             {
-                if (movie.Genre == genre)
+                if (movie.Genre.ToUpper() == genre)
                 {
                     matchingMovies.Add(movie);
                 }
@@ -123,6 +123,15 @@ namespace CIT255FinalApplication
             }
 
             return matchingMovies;
+        }
+
+        public int IncrementID(List<Movie> movies)
+        {
+            Movie lastMovie = movies[movies.Count - 1];
+
+            int ID = lastMovie.ID;
+
+            return ID =+ 1;
         }
 
     }

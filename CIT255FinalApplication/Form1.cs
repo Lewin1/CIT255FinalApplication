@@ -71,8 +71,6 @@ namespace CIT255FinalApplication
             btnDelete.Visible = true;
             btnVote.Visible = true;
             btnExit.Visible = true;
-
-            txtID.ReadOnly = false;
         }
 
         public void ShowQueryButtons()
@@ -136,7 +134,8 @@ namespace CIT255FinalApplication
             HideAllButtons();
             ShowAddForm();
             DisplayAllMovies();
-            this.ActiveControl = txtID;
+            txtID.Text = businessLayer.IncrementID(businessLayer.DisplayAllMovies()).ToString();
+            this.ActiveControl = txtName;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -147,7 +146,6 @@ namespace CIT255FinalApplication
             DisplayAllMovies();
             lbID.Visible = false;
             txtID.Text = "Please select an item from the list above";
-            txtID.ReadOnly = true;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -238,9 +236,9 @@ namespace CIT255FinalApplication
             DisplayAllMovies();
             this.ActiveControl = txtName;
 
-            if (txtName.Text != "")
+            if (txtName.Text.ToUpper() != "")
             {
-                DisplayQueriedMovies(businessLayer.QueryMoviesByName(txtName.Text));
+                DisplayQueriedMovies(businessLayer.QueryMoviesByName(txtName.Text.ToUpper()));
                 lbName.Visible = false;
                 txtName.Visible = false;
                 txtName.Text = "";
@@ -259,9 +257,9 @@ namespace CIT255FinalApplication
             DisplayAllMovies();
             this.ActiveControl = txtGenre;
 
-            if (txtGenre.Text != "")
+            if (txtGenre.Text.ToUpper() != "")
             {
-                DisplayQueriedMovies(businessLayer.QueryMoviesByGenre(txtGenre.Text));
+                DisplayQueriedMovies(businessLayer.QueryMoviesByGenre(txtGenre.Text.ToUpper()));
                 lbGenre.Visible = false;
                 txtGenre.Visible = false;
                 txtGenre.Text = "";
@@ -302,6 +300,8 @@ namespace CIT255FinalApplication
             {
                 lstDisplayList.Items.Add(movie);
             }
+
+            movies = sortedMovies;
         }
 
         public void DisplayQueriedMovies(List<Movie> movies)
@@ -348,8 +348,6 @@ namespace CIT255FinalApplication
             txtYear.Text = movie.Year.ToString();
             txtGenre.Text = movie.Genre;
 
-            txtID.ReadOnly = true;
-
             ShowAddForm();
 
         }
@@ -357,10 +355,6 @@ namespace CIT255FinalApplication
         public void AppStateAdd()
         {
             Movie movie = GetMovieFromUser();
-            if (movie.ID == 0)
-            {
-                MessageBox.Show("Please enter a valid number for the movie ID.");
-            }
 
             if (movie.Name == "")
             {
@@ -377,7 +371,7 @@ namespace CIT255FinalApplication
                 MessageBox.Show("Please enter a valid number for the movie year.");
             }
             
-            if (movie.ID != 0 && movie.Name != "" && movie.Genre != "" && movie.Year != 0)
+            if (movie.Name != "" && movie.Genre != "" && movie.Year != 0)
             {
                 businessLayer.addMovie(movie);
                 HideAllButtons();

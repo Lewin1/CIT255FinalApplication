@@ -28,3 +28,13 @@ C:\Users\Lewin1\Documents\GitHub\CIT255FinalApplication\CIT255FinalApplication\o
 C:\Users\Lewin1\Documents\GitHub\CIT255FinalApplication\CIT255FinalApplication\obj\Debug\CIT255FinalApplication.csproj.CoreCompileInputs.cache
 C:\Users\Lewin1\Documents\GitHub\CIT255FinalApplication\CIT255FinalApplication\obj\Debug\CIT255FinalApplication.exe
 C:\Users\Lewin1\Documents\GitHub\CIT255FinalApplication\CIT255FinalApplication\obj\Debug\CIT255FinalApplication.pdb
+C:\Users\Lewin1\Desktop\CIT255FinalApplication\CIT255FinalApplication\bin\Debug\CIT255FinalApplication.exe.config
+C:\Users\Lewin1\Desktop\CIT255FinalApplication\CIT255FinalApplication\bin\Debug\CIT255FinalApplication.exe
+C:\Users\Lewin1\Desktop\CIT255FinalApplication\CIT255FinalApplication\bin\Debug\CIT255FinalApplication.pdb
+C:\Users\Lewin1\Desktop\CIT255FinalApplication\CIT255FinalApplication\obj\Debug\CIT255FinalApplication.csprojResolveAssemblyReference.cache
+C:\Users\Lewin1\Desktop\CIT255FinalApplication\CIT255FinalApplication\obj\Debug\CIT255FinalApplication.Form1.resources
+C:\Users\Lewin1\Desktop\CIT255FinalApplication\CIT255FinalApplication\obj\Debug\CIT255FinalApplication.Properties.Resources.resources
+C:\Users\Lewin1\Desktop\CIT255FinalApplication\CIT255FinalApplication\obj\Debug\CIT255FinalApplication.csproj.GenerateResource.Cache
+C:\Users\Lewin1\Desktop\CIT255FinalApplication\CIT255FinalApplication\obj\Debug\CIT255FinalApplication.csproj.CoreCompileInputs.cache
+C:\Users\Lewin1\Desktop\CIT255FinalApplication\CIT255FinalApplication\obj\Debug\CIT255FinalApplication.exe
+C:\Users\Lewin1\Desktop\CIT255FinalApplication\CIT255FinalApplication\obj\Debug\CIT255FinalApplication.pdb

@@ -45,6 +45,11 @@ namespace CIT255FinalApplication
             btnDelete.Visible = false;
             btnContinue.Visible = false;
 
+            HideEntryBoxes();
+        }
+
+        public void HideEntryBoxes()
+        {
             lbID.Visible = false;
             lbName.Visible = false;
             lbYear.Visible = false;
@@ -56,13 +61,6 @@ namespace CIT255FinalApplication
             txtYear.Visible = false;
             txtGenre.Visible = false;
             txtRating.Visible = false;
-
-            txtID.Text = "";
-            txtName.Text = "";
-            txtYear.Text = "";
-            txtGenre.Text = "";
-            lstDisplayList.Items.Clear();
-            
         }
 
         public void ShowMainButtons()
@@ -121,6 +119,14 @@ namespace CIT255FinalApplication
             btnExit.Visible = true;
             btnContinue.Visible = true;
         }
+
+        public void ClearEntryBoxes()
+        {
+            txtID.Text = "";
+            txtName.Text = "";
+            txtYear.Text = "";
+            txtGenre.Text = "";
+        }
         #endregion
 
         #region Main Menu Buttons
@@ -174,6 +180,7 @@ namespace CIT255FinalApplication
             appState = AppState.None;
             HideAllButtons();
             ShowMainButtons();
+            ClearEntryBoxes();
             DisplayAllMovies();
         }
 
@@ -187,7 +194,7 @@ namespace CIT255FinalApplication
                     AppStateAdd();
                     break;
                 case AppState.Delete:
-                    AppStateDelete();
+                    AppStateDelete(GetMovieFromListBox());
                     break;
                 case AppState.Update:
                     AppStateUpdate();
@@ -225,10 +232,10 @@ namespace CIT255FinalApplication
         #region Query Buttons
         private void btnQueryByName_Click(object sender, EventArgs e)
         {
-
-
+            HideEntryBoxes();
             lbName.Visible = true;
             txtName.Visible = true;
+            DisplayAllMovies();
             this.ActiveControl = txtName;
 
             if (txtName.Text != "")
@@ -239,7 +246,6 @@ namespace CIT255FinalApplication
                 txtName.Text = "";
                 HideAllButtons();
                 ShowQueryButtons();
-                //DisplayAllMovies();
 
             }
 
@@ -247,13 +253,10 @@ namespace CIT255FinalApplication
 
         private void btnQueryByType_Click(object sender, EventArgs e)
         {
-
-            HideAllButtons();
-            ShowQueryButtons();
-            DisplayAllMovies();
-
+            HideEntryBoxes();
             lbGenre.Visible = true;
             txtGenre.Visible = true;
+            DisplayAllMovies();
             this.ActiveControl = txtGenre;
 
             if (txtGenre.Text != "")
@@ -262,18 +265,17 @@ namespace CIT255FinalApplication
                 lbGenre.Visible = false;
                 txtGenre.Visible = false;
                 txtGenre.Text = "";
+                HideAllButtons();
+                ShowQueryButtons();
             }
         }
 
         private void btnQueryByRating_Click(object sender, EventArgs e)
         {
-
-            HideAllButtons();
-            ShowQueryButtons();
-            DisplayAllMovies();
-
+            HideEntryBoxes();
             lbRating.Visible = true;
             txtRating.Visible = true;
+            DisplayAllMovies();
             this.ActiveControl = txtRating;
 
             if (txtRating.Text != "")
@@ -284,6 +286,8 @@ namespace CIT255FinalApplication
                 lbRating.Visible = false;
                 txtRating.Visible = false;
                 txtRating.Text = "";
+                HideAllButtons();
+                ShowQueryButtons();
             }
         }
         #endregion
@@ -291,6 +295,7 @@ namespace CIT255FinalApplication
         #region Button Methods
         public void DisplayAllMovies()
         {
+            lstDisplayList.Items.Clear();
             List<Movie> movies = businessLayer.DisplayAllMovies();
             List<Movie> sortedMovies = movies.OrderBy(m => m.ID).ToList();
             foreach (Movie movie in sortedMovies)
@@ -377,28 +382,28 @@ namespace CIT255FinalApplication
                 businessLayer.addMovie(movie);
                 HideAllButtons();
                 ShowMainButtons();
+                ClearEntryBoxes();
                 DisplayAllMovies();
             }
         }
 
-        public void AppStateDelete()
+        public void AppStateDelete(Movie movie)
         {
-            ShowDeleteForm();
-            int x;
-            if (Int32.TryParse(txtID.Text, out x)) { 
-                businessLayer.deleteMovie(x);
+            if (movie.ID != 0) { 
+                businessLayer.deleteMovie(movie.ID);
                 HideAllButtons();
                 ShowMainButtons();
+                ClearEntryBoxes();
                 DisplayAllMovies();
             };
         }
 
         public void AppStateUpdate()
         {
-
             businessLayer.updateMovie(GetMovieFromUser());
             HideAllButtons();
             ShowMainButtons();
+            ClearEntryBoxes();
             DisplayAllMovies();
         }
         #endregion

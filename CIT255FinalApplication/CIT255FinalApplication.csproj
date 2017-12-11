@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business Layer\BusinessLayer.cs" />
+    <Compile Include="DAL\Data.cs" />
     <Compile Include="DAL\RepositoryXML.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

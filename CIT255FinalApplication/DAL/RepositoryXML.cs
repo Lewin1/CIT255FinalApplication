@@ -12,7 +12,6 @@ namespace CIT255FinalApplication.Data
 {
     class RepositoryXML
     {
-        public const string dataFilePath = "Data.xml";
         public List<Movie> _movies = new List<Movie>();
 
         public RepositoryXML()
@@ -24,7 +23,7 @@ namespace CIT255FinalApplication.Data
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<Movie>), new XmlRootAttribute("Movies"));
 
-                using (FileStream stream = File.Create(dataFilePath))
+                using (FileStream stream = File.Create(DAL.Data.dataFilePath))
                 {
                     serializer.Serialize(stream, _movies);
                 }
@@ -36,7 +35,7 @@ namespace CIT255FinalApplication.Data
             List<Movie> movies;
             XmlSerializer serializer = new XmlSerializer(typeof(List<Movie>), new XmlRootAttribute("Movies"));
 
-            using (FileStream stream = File.OpenRead(dataFilePath))
+            using (FileStream stream = File.OpenRead(DAL.Data.dataFilePath))
             {
                 movies = (List<Movie>)serializer.Deserialize(stream);
             }
@@ -56,6 +55,13 @@ namespace CIT255FinalApplication.Data
             _movies.RemoveAll(m => m.ID == ID);
             WriteAllMovies();
 
+        }
+
+        public void AddAllMovies(List<Movie> movies)
+        {
+            _movies = movies;
+
+            WriteAllMovies();
         }
     }
 }

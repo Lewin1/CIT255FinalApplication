@@ -1,31 +1,115 @@
 <?xml version="1.0"?>
 <Movies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Movie>
-    <ID>3</ID>
-    <Genre>Adventure</Genre>
-    <Name>The Star</Name>
+    <ID>1</ID>
+    <Genre>Si-Fi</Genre>
+    <Name>Thor: Ragnarok</Name>
     <Year>2017</Year>
-    <UserRating>3</UserRating>
+    <UserRating>0</UserRating>
   </Movie>
   <Movie>
-    <ID>1</ID>
+    <ID>2</ID>
+    <Genre>Comedy</Genre>
+    <Name>Robots</Name>
+    <Year>2005</Year>
+    <UserRating>0</UserRating>
+  </Movie>
+  <Movie>
+    <ID>3</ID>
     <Genre>Fantasy</Genre>
     <Name>Coco</Name>
     <Year>2017</Year>
-    <UserRating>3</UserRating>
-  </Movie>
-  <Movie>
-    <ID>5</ID>
-    <Genre>1243</Genre>
-    <Name>1243</Name>
-    <Year>1243</Year>
-    <UserRating>1</UserRating>
+    <UserRating>0</UserRating>
   </Movie>
   <Movie>
     <ID>4</ID>
-    <Genre>1243</Genre>
-    <Name>124312</Name>
-    <Year>1243</Year>
-    <UserRating>1</UserRating>
+    <Genre>Si-Fi</Genre>
+    <Name>Blade Runner 2049</Name>
+    <Year>2017</Year>
+    <UserRating>0</UserRating>
+  </Movie>
+  <Movie>
+    <ID>5</ID>
+    <Genre>Comedy</Genre>
+    <Name>Monsters, Inc.</Name>
+    <Year>2001</Year>
+    <UserRating>0</UserRating>
+  </Movie>
+  <Movie>
+    <ID>6</ID>
+    <Genre>Comedy</Genre>
+    <Name>Shrek</Name>
+    <Year>2001</Year>
+    <UserRating>0</UserRating>
+  </Movie>
+  <Movie>
+    <ID>7</ID>
+    <Genre>Comedy</Genre>
+    <Name>Toy Story</Name>
+    <Year>1995</Year>
+    <UserRating>0</UserRating>
+  </Movie>
+  <Movie>
+    <ID>8</ID>
+    <Genre>Drama</Genre>
+    <Name>Apollo 13</Name>
+    <Year>1995</Year>
+    <UserRating>0</UserRating>
+  </Movie>
+  <Movie>
+    <ID>9</ID>
+    <Genre>Action</Genre>
+    <Name>Man of Steel</Name>
+    <Year>2013</Year>
+    <UserRating>0</UserRating>
+  </Movie>
+  <Movie>
+    <ID>10</ID>
+    <Genre>Action</Genre>
+    <Name>Iron Man 3</Name>
+    <Year>2013</Year>
+    <UserRating>0</UserRating>
+  </Movie>
+  <Movie>
+    <ID>11</ID>
+    <Genre>Drama</Genre>
+    <Name>Pan's Labyrinth</Name>
+    <Year>2006</Year>
+    <UserRating>0</UserRating>
+  </Movie>
+  <Movie>
+    <ID>12</ID>
+    <Genre>Action</Genre>
+    <Name>total Recall</Name>
+    <Year>1990</Year>
+    <UserRating>0</UserRating>
+  </Movie>
+  <Movie>
+    <ID>13</ID>
+    <Genre>Comedy</Genre>
+    <Name>Home Alone</Name>
+    <Year>1990</Year>
+    <UserRating>0</UserRating>
+  </Movie>
+  <Movie>
+    <ID>14</ID>
+    <Genre>Action</Genre>
+    <Name>Die Hard 2</Name>
+    <Year>1990</Year>
+    <UserRating>0</UserRating>
+  </Movie>
+  <Movie>
+    <ID>15</ID>
+    <Genre>Horror</Genre>
+    <Name>Blade</Name>
+    <Year>1998</Year>
+    <UserRating>0</UserRating>
+  </Movie>
+  <Movie>
+    <ID>16</ID>
+    <Genre>Comedy</Genre>
+    <Name>A Bug's Life</Name>
+    <Year>1998</Year>
+    <UserRating>0</UserRating>
   </Movie>
 </Movies>

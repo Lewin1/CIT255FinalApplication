@@ -127,12 +127,32 @@ namespace CIT255FinalApplication
 
         public int IncrementID(List<Movie> movies)
         {
-            Movie lastMovie = movies[movies.Count - 1];
+            int ID = 0;
 
-            int ID = lastMovie.ID;
+            if (movies.Count() != 0)
+            {
+                Movie lastMovie = movies[movies.Count - 1];
 
-            return ID =+ 1;
+                ID = lastMovie.ID;
+            }
+
+            return ID += 1;
         }
+        
+        public void ReSortListID(List<Movie> movies)
+        {
+            List<Movie> sortedMovies = new List<Movie>();
+            int x = 1;
 
+            foreach (Movie movie in movies)
+            {
+                movie.ID = x;
+                x++;
+                sortedMovies.Add(movie);
+            }
+
+            Repository.AddAllMovies(sortedMovies);
+        }
+        
     }
 }

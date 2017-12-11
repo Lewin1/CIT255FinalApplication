@@ -52,6 +52,7 @@
             this.txtGenre = new System.Windows.Forms.TextBox();
             this.txtRating = new System.Windows.Forms.TextBox();
             this.lbRating = new System.Windows.Forms.Label();
+            this.btnResetQuery = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -273,11 +274,22 @@
             this.lbRating.TabIndex = 25;
             this.lbRating.Text = "Rating";
             // 
+            // btnResetQuery
+            // 
+            this.btnResetQuery.Location = new System.Drawing.Point(16, 416);
+            this.btnResetQuery.Name = "btnResetQuery";
+            this.btnResetQuery.Size = new System.Drawing.Size(92, 37);
+            this.btnResetQuery.TabIndex = 101;
+            this.btnResetQuery.Text = "Reset Query";
+            this.btnResetQuery.UseVisualStyleBackColor = true;
+            this.btnResetQuery.Click += new System.EventHandler(this.btnResetQuery_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(611, 464);
+            this.Controls.Add(this.btnResetQuery);
             this.Controls.Add(this.txtRating);
             this.Controls.Add(this.lbRating);
             this.Controls.Add(this.txtGenre);
@@ -303,7 +315,7 @@
             this.Controls.Add(this.btnVoteDown);
             this.Controls.Add(this.btnExit);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Movie Database";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,6 +346,7 @@
         private System.Windows.Forms.TextBox txtGenre;
         private System.Windows.Forms.TextBox txtRating;
         private System.Windows.Forms.Label lbRating;
+        public System.Windows.Forms.Button btnResetQuery;
     }
 }
 

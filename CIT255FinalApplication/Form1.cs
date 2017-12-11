@@ -39,6 +39,7 @@ namespace CIT255FinalApplication
             btnQueryByName.Visible = false;
             btnQueryByRating.Visible = false;
             btnQueryByGenre.Visible = false;
+            btnResetQuery.Visible = false;
             btnExit.Visible = false;
 
             btnVote.Visible = false;
@@ -79,6 +80,7 @@ namespace CIT255FinalApplication
             btnQueryByName.Visible = true;
             btnQueryByRating.Visible = true;
             btnQueryByGenre.Visible = true;
+            btnResetQuery.Visible = true;
             btnExit.Visible = true;
         }
 
@@ -170,6 +172,7 @@ namespace CIT255FinalApplication
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            businessLayer.ReSortListID(businessLayer.DisplayAllMovies());
             Application.Exit();
         }
 
@@ -383,12 +386,16 @@ namespace CIT255FinalApplication
 
         public void AppStateDelete(Movie movie)
         {
-            if (movie.ID != 0) { 
-                businessLayer.deleteMovie(movie.ID);
-                HideAllButtons();
-                ShowMainButtons();
-                ClearEntryBoxes();
-                DisplayAllMovies();
+            if (movie != null)
+            {
+                if (movie.ID != 0)
+                {
+                    businessLayer.deleteMovie(movie.ID);
+                    HideAllButtons();
+                    ShowMainButtons();
+                    ClearEntryBoxes();
+                    DisplayAllMovies();
+                };
             };
         }
 
@@ -400,6 +407,12 @@ namespace CIT255FinalApplication
             ClearEntryBoxes();
             DisplayAllMovies();
         }
+
+        private void btnResetQuery_Click(object sender, EventArgs e)
+        {
+            DisplayAllMovies();
+        }
         #endregion
+
     }
 }

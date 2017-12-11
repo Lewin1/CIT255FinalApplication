@@ -33,7 +33,49 @@ namespace CIT255FinalApplication.Model
 
         public override string ToString()
         {
-            return "ID: " + ID + "     Name: " + Name + "     Genre: " + Genre + "     Year: " + Year + "     User Rating: " + UserRating;
+            string movieDetails = "";
+            int x = 1;
+
+            movieDetails += "ID: " + ID + "     Name: ";
+
+            while (x <= 40)
+            {
+                if (Name.Length == x)
+                {
+                    movieDetails += Name;
+
+                    while (x <= 40)
+                    {
+                        movieDetails += " ";
+                        x++;
+                    }
+                }
+                x++;
+            }
+
+            movieDetails += "Genre: ";
+            x = 1;
+
+            while (x <= 15)
+            {
+                if (Genre.Length == x)
+                {
+                    movieDetails += Genre;
+
+                    while (x <= 15)
+                    {
+                        movieDetails += " ";
+                        x++;
+                    }
+                }
+                x++;
+            }
+
+            movieDetails += "Year: " + Year + "     ";
+            movieDetails += "User Rating: " + UserRating;
+
+            return movieDetails;
+
         }
     }
 
